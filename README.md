@@ -1,2 +1,2 @@
 # fandom-web-client
-Client-side codebase for Fandom app (web)
+Client-side codebase for Fandom app
