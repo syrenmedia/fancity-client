@@ -1,2 +1,2 @@
-# fandom-client
-Client-side codebase for Fandom app
+# fandive-client
+Client-side codebase for Fandive app
