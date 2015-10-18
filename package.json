@@ -78,7 +78,10 @@
     "posttest": "npm run-script lint",
     "tdd": "onchange $npm_package_config_watch_js -- npm run-script tape"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-eslint": "^4.1.3",
