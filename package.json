@@ -18,7 +18,19 @@
     "cleanDir": "build/*",
     "symlinkExpression": "\\.(html|ico|png|jpg|jpeg)$",
     "vendorFonts": [],
-    "autoprefixerBrowsers": "> 5%",
+    "postcssConfig": "postcss-config.js",
+    "postcss": {
+      "use": [
+        "postcss-import",
+        "cssnext",
+        "autoprefixer"
+      ],
+      "input": "client/app.css",
+      "output": "build/app.css",
+      "autoprefixer": {
+        "browsers": "> 5%"
+      }
+    },
     "bundle": {
       "entry": "client/app.js",
       "output": "build/app.js"
@@ -42,9 +54,9 @@
     "copy": "npm run-script copy:src",
     "copy:src": "shjs tasks/symlink.js copy",
     "copy:fonts": "shjs tasks/fonts.js copy",
-    "style:dev": "echo \"todo\"",
+    "style:dev": "postcss -c $npm_package_config_postcssConfig",
     "style:prod": "npm run-script style:dev",
-    "style:watch": "onchange $npm_package_config_watch_css -- npm run-script style:dev",
+    "style:watch": "npm run-script style:dev -- --watch",
     "browserify": "browserify $npm_package_config_bundle_entry -t babelify -o $npm_package_config_bundle_output",
     "watchify": "watchify $npm_package_config_bundle_entry -t babelify -o $npm_package_config_bundle_output -p browserify-notify --verbose",
     "bundle:dev": "npm run-script browserify -- -p browserify-notify --debug",
@@ -68,16 +80,20 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^6.0.3",
     "babel-eslint": "^4.1.3",
     "babelify": "^6.3.0",
     "browser-sync": "^2.9.3",
     "browserify": "^11.0.1",
     "browserify-notify": "^1.1.2",
     "chalk": "^1.1.1",
+    "cssnext": "^1.8.4",
     "eslint": "^1.3.1",
     "http-server": "^0.8.0",
     "onchange": "^2.0.0",
     "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.2.0",
+    "postcss-import": "^7.0.0",
     "shelljs": "^0.5.3",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.0",
