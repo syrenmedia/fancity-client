@@ -1,15 +1,15 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
     "worker": true,
     "mocha": true,
     "shelljs": true,
-//    "es6": true // <-- messes with strict settings for non-es6 code
+    "es6": true
   },
   "globals": {
-    "Promise": true,
-    "chai": true
+    "Promise": true
   },
   "ecmaFeatures": {
     "arrowFunctions": true,
@@ -20,7 +20,7 @@
     "destructuring": true,
     "forOf": true,
     "generators": true,
-//    "modules": true, // <-- also contributes to breaking "strict" rule
+    "modules": true,
     "objectLiteralComputedProperties": true,
     "objectLiteralDuplicateProperties": true,
     "objectLiteralShorthandMethods": true,
