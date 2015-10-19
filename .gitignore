@@ -1,0 +1,26 @@
+#Deps
+node_modules
+bower_components
+
+# Logs
+logs
+*.log
+*.out
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Build Folder
+build/**
+
+# dotenv
+.env
+
+# Users Environment Variables
+.lock-wscript
+.DS_Store
+.idea
+*.swp
+*.swo
