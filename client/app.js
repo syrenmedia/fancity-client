@@ -1,18 +1,16 @@
 
+// debug
+import grouper from './lib/grouper';
 
 import http from 'http';
-//import alert from './fandive/api';
+import fdapi from './fandive/api';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-var grouper, div;
+import components from './components/components';
 
-grouper = function( name, ...dirs ) {
-  console.group( `${name}:` );
-  dirs.forEach( dir => console.dir( dir ));
-  console.groupEnd();
-};
+var div;
 
 grouper( 'http', http );
 grouper( 'React', React );
